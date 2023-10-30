@@ -26,20 +26,19 @@ while (totalPrice < bankAccount) {
     break;
   }
 
-  if (((totalPrice + phonePrice)* taxRate) + (totalPrice + phonePrice) <= bankAccount) {
+  if (((totalPrice + phonePrice) * taxRate) + (totalPrice + phonePrice) <= bankAccount) {
     addPhone();
     console.log("Added phone. Total Price: $" + totalPrice.toFixed(2));
-  } if (((totalPrice + phoneAccessory)* taxRate) + totalPrice + phoneAccessory <= bankAccount) {
+  } if (((totalPrice + phoneAccessory) * taxRate) + totalPrice + phoneAccessory <= bankAccount) {
     addAccessory();
     console.log("Added accessory. Total Price: $" + totalPrice.toFixed(2));
-  } 
+  } if (totalPrice) {
     payTaxes();
     console.log("After taxes were paid: $" + totalPrice.toFixed(2));
-
-  
+  };
 
   if (totalPrice > bankAccount) {
-    console.log("You can not afford this purchase! You have to pay: " + totalPrice);
+    console.log("You can not afford this purchase! You have to pay: " + (totalPrice.toFixed(2)));
     break;
   }
 };
