@@ -15,19 +15,19 @@ function addAccessory() {
 };
 function payTaxes() {
   return totalPrice = totalPrice + (totalPrice * taxRate);
-}
+};
 
 
-while (bankAccount > 0) {
+while (totalPrice < bankAccount) {
   if (totalPrice < bankAccount) {
     addPhone();
     console.log("Phone price: " + totalPrice);
-  }
+  };
 
   if (totalPrice < bankAccount) {
     addAccessory();
     console.log("Accessory price added " + totalPrice);
-  }
+  };
 
   /* Pay the Taxes of straight to jail xD: */
   payTaxes()
