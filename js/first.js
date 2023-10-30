@@ -18,10 +18,10 @@ function addAccessory() {
 
 function payTaxes() {
   totalPrice = totalPrice + (totalPrice * taxRate);
+  console.log("After taxes were paid: $" + totalPrice.toFixed(2));
 }
 
   while (totalPrice < bankAccount) {
-  
 
     if (bankAccount < phonePrice) {
       console.log("Not enough money to purchase a phone!");
@@ -31,13 +31,17 @@ function payTaxes() {
     if (((totalPrice + phonePrice) * taxRate) + (totalPrice + phonePrice) <= bankAccount) {
       addPhone();
       console.log("Added phone. Total Price: $" + totalPrice.toFixed(2));
+      payTaxes();
+      bankAccount = bankAccount - totalPrice;
+      console.log("Your bank account balance is: $" + (bankAccount.toFixed(2)));
     } if (((totalPrice + phoneAccessory) * taxRate) + totalPrice + phoneAccessory <= bankAccount) {
       addAccessory();
       console.log("Added accessory. Total Price: $" + totalPrice.toFixed(2));
-    } 
       payTaxes();
-      console.log("After taxes were paid: $" + totalPrice.toFixed(2));
-    
+      bankAccount = bankAccount - totalPrice;
+      console.log("Your bank account balance is: $" + (bankAccount.toFixed(2)));
+    } 
+      
       if (totalPrice > bankAccount) {
       console.log("You can not afford this purchase! You have to pay: " + (totalPrice.toFixed(2)));
       break;
