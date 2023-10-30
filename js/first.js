@@ -16,3 +16,21 @@ function addAccessory() {
 function payTaxes() {
   return totalPrice = totalPrice + (totalPrice * taxRate);
 }
+
+
+while (bankAccount < 0) {
+  if (totalPrice < bankAccount) {
+    addPhone();
+    console.log(totalPrice);
+  }
+
+  if (totalPrice < bankAccount) {
+    addAccessory();
+    console.log(totalPrice);
+  }
+
+  /* Pay the Taxes of straight to jail xD: */
+  payTaxes()
+  console.log(totalPrice);
+  return "$" + totalPrice.toFixed(2);
+}
