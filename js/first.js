@@ -29,17 +29,17 @@ while (totalPrice < bankAccount) {
   if (((totalPrice + phonePrice)* taxRate) + (totalPrice + phonePrice) <= bankAccount) {
     addPhone();
     console.log("Added phone. Total Price: $" + totalPrice.toFixed(2));
-  } else if (((totalPrice + phoneAccessory)* taxRate) + totalPrice + phoneAccessory <= bankAccount) {
+  } if (((totalPrice + phoneAccessory)* taxRate) + totalPrice + phoneAccessory <= bankAccount) {
     addAccessory();
     console.log("Added accessory. Total Price: $" + totalPrice.toFixed(2));
-  } else {
+  } 
     payTaxes();
     console.log("After taxes were paid: $" + totalPrice.toFixed(2));
-    break; // Exit the loop after taxes are paid
-  }
+
+  
 
   if (totalPrice > bankAccount) {
-    console.log("You can not afford this purchase!");
+    console.log("You can not afford this purchase! You have to pay: " + totalPrice);
     break;
   }
 };
