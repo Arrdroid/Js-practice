@@ -1,38 +1,47 @@
 document.body.style.backgroundColor = "black";
 
 /* Practice Chapter 1 Page 26 */
-const bankAccount = 379;
+// const bankAccount = 379;
+let bankAccount = parseFloat(prompt("Set your bank account balance!"));
 const phonePrice = 85;
-const phoneAccesory = 12.50;
+const phoneAccessory = 12.50;
 const taxRate = 0.12;
 let totalPrice = 0;
 
 function addPhone() {
-  return totalPrice += phonePrice;
-};
-function addAccessory() {
-  return totalPrice += phoneAccesory;
-};
-function payTaxes() {
-  return totalPrice = totalPrice + (totalPrice * taxRate);
-};
+  totalPrice += phonePrice;
+}
 
+function addAccessory() {
+  totalPrice += phoneAccessory;
+}
+
+function payTaxes() {
+  totalPrice = totalPrice + (totalPrice * taxRate);
+}
 
 while (totalPrice < bankAccount) {
-  if (totalPrice + phonePrice <= bankAccount) {
+  if (bankAccount < phonePrice) {
+    console.log("Not enough money to purchase a phone!");
+    break;
+  }
+
+  if (((totalPrice + phonePrice)* taxRate) + (totalPrice + phonePrice) <= bankAccount) {
     addPhone();
-    console.log("Added phone. Total Price: $" + totalPrice);
-  };
-
-  if (totalPrice + phoneAccesory <= bankAccount) {
+    console.log("Added phone. Total Price: $" + totalPrice.toFixed(2));
+  } else if (((totalPrice + phoneAccessory)* taxRate) + totalPrice + phoneAccessory <= bankAccount) {
     addAccessory();
-    console.log("Added Accessory. Total Price: $" + totalPrice);
-  };
+    console.log("Added accessory. Total Price: $" + totalPrice.toFixed(2));
+  } else {
+    payTaxes();
+    console.log("After taxes were paid: $" + totalPrice.toFixed(2));
+    break; // Exit the loop after taxes are paid
+  }
 
-  /* Pay the Taxes of straight to jail xD: */
-  if (totalPrice + (totalPrice * taxRate) <= bankAccount) {
-    payTaxes()
-    console.log("After taxes were payed: " + "$" + (totalPrice.toFixed(2)));
-  };
+  if (totalPrice > bankAccount) {
+    console.log("You can not afford this purchase!");
+    break;
+  }
+};
+
     
-}
