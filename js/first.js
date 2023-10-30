@@ -19,18 +19,20 @@ function payTaxes() {
 
 
 while (totalPrice < bankAccount) {
-  if (totalPrice < bankAccount) {
+  if (totalPrice + phonePrice <= bankAccount) {
     addPhone();
-    console.log("Phone price: " + totalPrice);
+    console.log("Added phone. Total Price: $" + totalPrice);
   };
 
-  if (totalPrice < bankAccount) {
+  if (totalPrice + phoneAccesory <= bankAccount) {
     addAccessory();
-    console.log("Accessory price added " + totalPrice);
+    console.log("Added Accessory. Total Price: $" + totalPrice);
   };
 
   /* Pay the Taxes of straight to jail xD: */
-  payTaxes()
-  console.log("After taxes were payed: "+ "$" + (totalPrice.toFixed(2)));
-
+  if (totalPrice + (totalPrice * taxRate) <= bankAccount) {
+    payTaxes()
+    console.log("After taxes were payed: " + "$" + (totalPrice.toFixed(2)));
+  };
+    
 }
