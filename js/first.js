@@ -21,6 +21,9 @@ function payTaxes() {
 }
 
 while (totalPrice < bankAccount) {
+  let a = 0;
+  let b = 0;
+
   if (bankAccount < phonePrice) {
     console.log("Not enough money to purchase a phone!");
     break;
@@ -32,8 +35,9 @@ while (totalPrice < bankAccount) {
   } if (((totalPrice + phoneAccessory) * taxRate) + totalPrice + phoneAccessory <= bankAccount) {
     addAccessory();
     console.log("Added accessory. Total Price: $" + totalPrice.toFixed(2));
-  } if (totalPrice) {
+  } if (a > b) {
     payTaxes();
+    b = totalPrice;
     console.log("After taxes were paid: $" + totalPrice.toFixed(2));
   };
 
