@@ -18,19 +18,19 @@ function payTaxes() {
 }
 
 
-while (bankAccount < 0) {
-  if (Number(totalPrice) < bankAccount) {
+while (bankAccount > 0) {
+  if (totalPrice < bankAccount) {
     addPhone();
-    console.log(totalPrice);
+    console.log("Phone price: " + totalPrice);
   }
 
   if (totalPrice < bankAccount) {
     addAccessory();
-    console.log(totalPrice);
+    console.log("Accessory price added " + totalPrice);
   }
 
   /* Pay the Taxes of straight to jail xD: */
   payTaxes()
-  console.log(totalPrice);
-  totalPrice = "$" + totalPrice.toFixed(2);
+  console.log("After taxes were payed: "+ "$" + (totalPrice.toFixed(2)));
+
 }
