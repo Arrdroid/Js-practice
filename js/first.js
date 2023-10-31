@@ -10,10 +10,12 @@ let totalPrice = 0;
 
 function addPhone() {
   totalPrice += phonePrice;
+  console.log("Added phone. Total Price is: $" + totalPrice.toFixed(2));
 }
 
 function addAccessory() {
   totalPrice += phoneAccessory;
+  console.log("Added accessory. Total Price is: $" + totalPrice.toFixed(2));
 }
 
 function payTaxes() {
@@ -30,13 +32,11 @@ function payTaxes() {
 
     if (((totalPrice + phonePrice) * taxRate) + (totalPrice + phonePrice) <= bankAccount) {
       addPhone();
-      console.log("Added phone. Total Price: $" + totalPrice.toFixed(2));
       payTaxes();
       bankAccount = bankAccount - totalPrice;
       console.log("Your bank account balance is: $" + (bankAccount.toFixed(2)));
     } if (((totalPrice + phoneAccessory) * taxRate) + totalPrice + phoneAccessory <= bankAccount) {
       addAccessory();
-      console.log("Added accessory. Total Price: $" + totalPrice.toFixed(2));
       payTaxes();
       bankAccount = bankAccount - totalPrice;
       console.log("Your bank account balance is: $" + (bankAccount.toFixed(2)));
