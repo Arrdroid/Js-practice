@@ -23,6 +23,11 @@ function payTaxes() {
   console.log("After taxes were paid: $" + totalPrice.toFixed(2));
 }
 
+function updateAndShowBankBalance() {
+  bankAccount -= totalPrice;
+  console.log("Your bank account balance is: $" + (bankAccount.toFixed(2)));
+}
+
   while (totalPrice < bankAccount) {
 
     if (bankAccount < phonePrice) {
@@ -33,13 +38,11 @@ function payTaxes() {
     if (((totalPrice + phonePrice) * taxRate) + (totalPrice + phonePrice) <= bankAccount) {
       addPhone();
       payTaxes();
-      bankAccount = bankAccount - totalPrice;
-      console.log("Your bank account balance is: $" + (bankAccount.toFixed(2)));
+      updateAndShowBankBalance();
     } if (((totalPrice + phoneAccessory) * taxRate) + totalPrice + phoneAccessory <= bankAccount) {
       addAccessory();
       payTaxes();
-      bankAccount = bankAccount - totalPrice;
-      console.log("Your bank account balance is: $" + (bankAccount.toFixed(2)));
+      updateAndShowBankBalance();
     } 
       
       if (totalPrice > bankAccount) {
