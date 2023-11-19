@@ -1,3 +1,3 @@
 # Js-practice
 
-This is my practice using YDKJS set of books written by KYLE SIMPSON ;
+This is my notes and practice using the YDKJS set of books written by KYLE SIMPSON ;
