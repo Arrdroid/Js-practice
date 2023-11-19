@@ -11,8 +11,8 @@ false
 "hello"
 42
 true
-[ ], [1, "2", 3] // (arrays)
-{ }, { a: 42 }   // (objects)
-function foo () {..} // (functions)
+// [ ], [1, "2", 3]      // (arrays)
+// { }, { a: 42 }        // (objects)
+// function foo () {..}  // (functions)
 
 /* It's important to remember that a non-boolean value only follows this "truthy"/"falsy" coercion if it's actually coerced to a boolean. */
