@@ -14,4 +14,4 @@ arr.length; // 3
 
 typeof(arr); // object
 
-/* The best */
+/* The best and most natural approach is to use arrays for numerically positioned values and use objects for named properties. */
