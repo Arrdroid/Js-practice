@@ -12,7 +12,7 @@ switch (a) {
     default:
     // fallback to here
    }
-// The break is important if you want only the statement(s) in one case to run. If you omit break from a case, and that case matches or runs, execution will continue with the next case's statements regardless of that case matching. This so called '' fall through '' is sometimes useful/desired: //   
+// The break is important if you want only the statement(s) in one case to run. If you omit break from a case, and that case matches or runs, execution will continue with the next case's statements regardless of that case matching. This so called '' fall through '' is sometimes useful/desired: 
 switch (a) {
     case 2:
     case 10:
